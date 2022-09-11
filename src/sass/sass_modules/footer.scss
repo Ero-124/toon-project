@@ -1,0 +1,53 @@
+@import "global_styles";
+
+footer {
+   background: #4B170E;
+   margin-top: 60px;
+   padding: 50px 0;
+   .container {
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      .footer_block {
+         flex-basis: 24%;
+         h3 {
+            color: #fff;
+            margin-bottom: 15px;
+         }
+         p {
+            color: #ccc;
+            font-size: 12px;
+            margin-top: 15px;
+         }
+
+         a {
+            display: block;
+         }
+
+         ul {
+            li {
+               a {
+                  margin: 0px 0px 8px 0px;
+                  color: #ccc;
+
+                  &:hover {
+                     color: #fff;
+                  }
+               }
+            }
+         }
+      }
+      @media screen and (max-width: $tablet) {
+         flex-wrap: wrap;
+         .footer_block {
+            flex-basis: 47%;
+         }
+      }
+      @media screen and (max-width: $bigMobile) {
+         .footer_block {
+            flex-basis: 100%;
+            text-align: center;
+         }
+      }
+   }
+}

@@ -1,0 +1,186 @@
+@import "global_styles";
+
+.top_nav {
+   background: $gray;
+
+   .container {
+      width: 100%;
+      min-height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+   }
+
+   .top_nav__block {
+      display: flex;
+
+      a {
+         display: block;
+         margin: 0px 15px 0px 0px;
+
+         &:last-child {
+            margin: 0px 0px 0px 0px;
+         }
+
+         svg {
+            width: 30px;
+            height: 30px;
+            fill: $primary;
+         }
+      }
+
+      a {
+         font-weight: bold;
+      }
+   }
+}
+
+nav {
+   background: #fff;
+   position: sticky;
+   top: 0;
+   left: 0;
+   z-index: 999;
+   box-shadow: 0 6px 36px rgb(0 0 0 / 9%);
+
+   .container {
+      display: flex;
+      justify-content: space-between;
+      min-height: 80px;
+      align-items: center;
+      position: relative;
+
+      .nav_logo {}
+
+      .nav_menu {
+         overflow: hidden;
+
+         .menuBtn {
+            display: none;
+            cursor: pointer;
+            width: 50px;
+            height: 50px;
+            justify-content: flex-end;
+            align-items: center;
+            position: relative;
+
+            &:before,
+            &::after {
+               content: '';
+               position: absolute;
+               background-color: $black;
+               border-radius: 10px;
+               width: 40px;
+               height: 5px;
+               transition: all 0.15s linear;
+            }
+
+            &::before {
+               transform: translateY(-200%);
+            }
+
+            &::after {
+               transform: translateY(200%);
+            }
+
+            span {
+               position: absolute;
+               width: 40px;
+               height: 5px;
+               background-color: $black;
+               border-radius: 10px;
+               transition: transform 0.3s;
+            }
+
+            &.open {
+               span {
+                  transform: scale(0);
+               }
+
+               &::before {
+                  transform: rotate(45deg);
+               }
+
+               &::after {
+                  transform: rotate(-45deg);
+               }
+
+            }
+         }
+
+         ul {
+            display: flex;
+            justify-content: space-between;
+
+            li {
+               a {
+                  display: flex;
+                  align-items: center;
+                  height: 80px;
+                  color: $black;
+                  padding: 8px;
+                  letter-spacing: 1px;
+                  font-weight: bold;
+                  text-transform: uppercase;
+                  position: relative;
+                  z-index: 5;
+                  transition: color 0.3s;
+
+                  &::after {
+                     content: '';
+                     position: absolute;
+                     width: 100%;
+                     height: 0%;
+                     top: 0;
+                     left: 0;
+                     background: $primary;
+                     transition: height 0.4s;
+                     z-index: -1;
+                  }
+
+                  &:hover {
+                     color: #fff;
+
+                     &::after {
+                        height: 100%;
+                        background: $primary;
+                     }
+                  }
+               }
+            }
+         }
+
+         @media screen and (max-width: 767px) {
+            .menuBtn {
+               display: flex;
+            }
+
+            ul {
+               flex-flow: column;
+               justify-content: flex-start;
+               position: absolute;
+               top: 0px;
+               width: 70%;
+               left: -100%;
+               overflow: hidden;
+               transition: left 0.3s linear;
+               background: $gray;
+               height: 100vh;
+
+
+               &.active_nav {
+                  left: 0;
+               }
+
+               li {
+                  a {
+                     height: 60px;
+                     padding: 30px 20px;
+                  }
+               }
+            }
+         }
+      }
+
+   }
+}
