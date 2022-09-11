@@ -1,0 +1,136 @@
+// global
+@import "./sass_modules/global_styles";
+@import "./sass_modules/fonts";
+
+// static files
+@import "./sass_modules/nav";
+@import "./sass_modules/header";
+@import "./sass_modules/main";
+@import "./sass_modules/footer";
+
+
+* {
+   padding: 0;
+   margin: 0;
+   border: 0;
+   outline: 0;
+   box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+   -moz-box-sizing: border-box;
+   -webkit-box-sizing: border-box;
+   box-sizing: border-box;
+}
+
+:focus,
+:active {
+   outline: none;
+}
+
+a:focus,
+a:active {
+   outline: none;
+}
+
+
+html,
+body {
+   width: 100%;
+   font-size: 14px;
+   -ms-text-size-adjust: 100%;
+   -moz-text-size-adjust: 100%;
+   -webkit-text-size-adjust: 100%;
+   scroll-behavior: smooth;
+}
+
+body.lock {
+   overflow: hidden;
+}
+
+input,
+button,
+textarea {
+   font-family: inherit;
+}
+
+input::-ms-clear {
+   display: none;
+}
+
+button {
+   cursor: pointer;
+}
+
+button::-moz-focus-inner {
+   padding: 0;
+   border: 0;
+}
+
+a {
+   color: $link;
+   text-decoration: none;
+   transition: all 0.3s;
+}
+
+a:hover {
+   text-decoration: underline;
+   color: $primary;
+
+}
+
+ul li {
+   list-style: none;
+}
+
+img {
+   vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+   font-size: inherit;
+   font-weight: 400;
+}
+
+body {
+   font-family: NSARegular, "Roboto", sans-serif;
+
+   &::-webkit-scrollbar {
+      width: 7px;
+      height: 7px;
+      overflow: hidden;
+   }
+
+   &::-webkit-scrollbar-track {
+      background-color: #ccc;
+   }
+
+   &::-webkit-scrollbar-thumb {
+      background-color: $primary;
+   }
+}
+
+
+
+.our_team .swiper-button-next, .our_team .swiper-button-prev {
+   color: $primary;
+   font-weight: 900;
+   top: 45%;
+
+   @media screen and (max-width: 400px) {
+      --swiper-navigation-size: 33px;
+      top: 42%;
+   }
+}
+
+
+
+
+
